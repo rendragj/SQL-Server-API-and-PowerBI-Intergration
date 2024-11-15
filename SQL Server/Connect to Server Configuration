@@ -1,0 +1,4 @@
+In order to allow user access via the network from their Power BI to the SQL Server. The the SQL server was enabled for TCP/IP. Profile's with SQL Server authentication were created. No active directory was utilized
+in this demo and assume WORKGROUP. 
+
+The Firewall was configured to allow TCP port 1433 and UDP 1434 for SQL Server connection. Tested and confirmed using Windows Powershell Test-NetConnection. Connected via PowerBi and signed in using assigned profile. 
