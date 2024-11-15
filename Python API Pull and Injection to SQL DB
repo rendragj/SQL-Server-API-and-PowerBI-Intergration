@@ -1,6 +1,3 @@
-Python Script for pulling data and uploading to SQL database. 
-
-#imported libraries
 import requests #Making HTTP Requests to API
 import pyodbc #Connecting and executing SQL Queries
 import json # handling json data
