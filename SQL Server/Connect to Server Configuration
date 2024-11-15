@@ -1,9 +1,11 @@
-To facilitate seamless user access to the SQL Server from Power BI over the network, several critical configurations and tests were performed to ensure connectivity, security, and disaster recovery readiness.
+To facilitate seamless user access to the SQL Server from Power BI over the network, several critical configurations and tests were performed to ensure connectivity,
+  security, and disaster recovery readiness.
 
 SQL Server Configuration for Network Access
 
 Enabling TCP/IP Protocol:
-  The SQL Server instance was configured to allow network connectivity by enabling the TCP/IP protocol through the SQL Server Configuration Manager. This ensures SQL Server is accessible over the network using the standard port for SQL connections (1433).
+  The SQL Server instance was configured to allow network connectivity by enabling the TCP/IP protocol through the SQL Server Configuration Manager. 
+    This ensures SQL Server is accessible over the network using the standard port for SQL connections (1433).
 
 User Authentication Setup:
   SQL Server Authentication was implemented to provide access credentials for Power BI users. Dedicated SQL Server logins and profiles were created with appropriate roles and permissions (e.g., db_datareader for read-only access).
