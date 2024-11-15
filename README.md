@@ -1,7 +1,7 @@
 # SQL-Server-API-and-PowerBI-Intergration
 
 Objective
-This project involves setting up a robust data pipeline to streamline the flow of data from the Fixer API into Power BI, providing users with up-to-date insights. The solution showcases expertise in SQL Server configuration, data integration, and reporting setup on a Windows Server 2019 environment.
+This project involves setting up a robust data pipeline to streamline the flow of data from the Fixer API into Power BI, providing users with up-to-date insights of the Euro Dollar exchange rate to other currencies. The solution showcases expertise in SQL Server configuration, data integration, and reporting setup on a Windows Server 2019 environment.
 
 Solution Details
 
