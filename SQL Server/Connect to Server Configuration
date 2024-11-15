@@ -1,4 +1,37 @@
-In order to allow user access via the network from their Power BI to the SQL Server. The the SQL server was enabled for TCP/IP. Profile's with SQL Server authentication were created. No active directory was utilized
-in this demo and assume WORKGROUP. 
+To facilitate seamless user access to the SQL Server from Power BI over the network, several critical configurations and tests were performed to ensure connectivity, security, and disaster recovery readiness.
 
-The Firewall was configured to allow TCP port 1433 and UDP 1434 for SQL Server connection. Tested and confirmed using Windows Powershell Test-NetConnection. Connected via PowerBi and signed in using assigned profile. 
+SQL Server Configuration for Network Access
+
+Enabling TCP/IP Protocol:
+  The SQL Server instance was configured to allow network connectivity by enabling the TCP/IP protocol through the SQL Server Configuration Manager. This ensures SQL Server is accessible over the network using the standard port for SQL connections (1433).
+
+User Authentication Setup:
+  SQL Server Authentication was implemented to provide access credentials for Power BI users. Dedicated SQL Server logins and profiles were created with appropriate roles and permissions (e.g., db_datareader for read-only access).
+  As this setup was conducted in a WORKGROUP environment (without Active Directory integration), all authentication was configured using SQL Server’s internal security model.
+
+Firewall Configuration:
+  The server’s Windows Defender Firewall was updated to allow SQL Server network traffic:
+  TCP port 1433 was opened to enable SQL Server connections.
+  UDP port 1434 was opened to facilitate SQL Server Browser service, enabling named instance discovery.
+  These changes were applied to the relevant profiles (Domain, Private, Public) to support both direct connections and discovery of named instances.
+
+Connectivity Verification:
+  Connection testing was performed using Windows PowerShell’s Test-NetConnection command, validating that the required ports (1433 for SQL Server and 1434 for SQL Server Browser) were open and accessible on the network.
+  Additionally, the server’s hostname and IP resolution were confirmed to ensure reliable access.
+
+Power BI Integration:
+  Power BI Desktop was configured to connect to the SQL Server using the assigned SQL Server authentication credentials.
+  The connection utilized the hostname and explicitly specified the SQL Server instance (if named) to ensure accurate resolution and data retrieval.
+  The connection was tested and verified, with Power BI successfully querying data from the SQL Server.
+
+Disaster Recovery Configuration:
+  Veeam Backup & Replication was installed and configured to provide local backup capabilities for the SQL Server and associated system files.
+  Regular backups were scheduled to support simple disaster recovery scenarios, ensuring the SQL Server environment can be quickly restored in the event of 
+    hardware failure, data corruption, or other operational disruptions.
+  Backup integrity and recovery processes were validated to confirm readiness.
+
+
+Summary:
+  This comprehensive configuration ensures secure, reliable, and efficient connectivity between Power BI and SQL Server in a WORKGROUP-based network environment. 
+    By enabling TCP/IP, configuring authentication, and opening the necessary firewall ports, users can now access SQL Server data with confidence. 
+    Additionally, the implementation of a robust local backup strategy enhances the overall reliability and disaster recovery capabilities of the environment.
