@@ -1,0 +1,2 @@
+SELECT * FROM RatesHeader ORDER BY RateDate DESC;
+SELECT * FROM RatesDetails WHERE RateID = (SELECT MAX(RateID) FROM RatesHeader);
