@@ -1,0 +1,12 @@
+Ensuring Security of SQL and integrity is crucial. Below are steps in ensuring security of SQL server are adhered. Since this is a demo and no domain is present 
+SQL login will remain where in an optimal scenario windows login would be prefered. 
+
+Changed port number to a value that is not commonly used. 
+
+used the following to block any external access and allow only known IP addresses:
+netsh advfirewall firewall add rule name="Allow Internal Network Access" dir=in action=allow protocol=TCP localport=???? remoteip=192.x.x.x/24
+netsh advfirewall firewall add rule name="Block External SQL Access" dir=in action=block protocol=TCP localport=???? remoteip=Internet
+
+We set the Firewall to block everything besides the intranet and only allows anything within the IP range of the local network and subnet to connect to the SQL Server
+This made the SQL server reachable from within the network and any external networks unable to do so. 
+
