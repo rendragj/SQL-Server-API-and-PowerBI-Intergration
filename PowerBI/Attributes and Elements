@@ -2,13 +2,13 @@ The Attributes are as follows
 
 Table 1:
 Currency Code = The currency three letter acronym (USD, AED, etc.)
-Exchange Rate = The currencies exchange rate. 
-Rate Detail ID =
-Rate ID =
+Exchange Rate = The currencies exchange rate (This is based off the EUR). 
+RateDetailID = Primary key
+Rate ID = Foriegn Key, Gives all Currency Code taken from a given timestamp an ID so that if the code differes it is connected to the same timestamp. 
 
 Table 2:
-Base Currency =
-Rate Date =
-Rate ID = 
-Success = 
-Timestamp = 
+Base Currency = The Base Currency that the values are compared to, in this case the EUR.
+Rate Date = Date log of each recorded measure of the Forex. (2025-03-20)
+Rate ID = Primary Key
+Success = Confirmation if API pull was successful or not. 
+Timestamp = Exact time measurement of the given value at time of record. (1742489652)
