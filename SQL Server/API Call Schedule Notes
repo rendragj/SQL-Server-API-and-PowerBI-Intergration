@@ -1,2 +1,3 @@
 The API is a Demo and has a limit to the amount of API calls than can be made. For this scenario I configured the Windows Server Task Scheduler to run the .Py script 
-  to make the calls 3 times a day with two in a half hour space between each. This allowed the server to update with the latest Forex Market data without maxing out the     limit.
+  to make the calls 3 times a day with two in a half hour space between each. This allowed the server to update with the latest Forex Market data without maxing 
+  out the limit.
