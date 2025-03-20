@@ -4,21 +4,18 @@ To facilitate seamless user access to the SQL Server from Power BI over the netw
 SQL Server Configuration for Network Access
 
 Enabling TCP/IP Protocol:
-  The SQL Server instance was configured to allow network connectivity by enabling the TCP/IP protocol through the SQL Server Configuration Manager. 
-    This ensures SQL Server is accessible over the network using the standard port for SQL connections (1433).
+  The SQL Server instance was configured to allow local network connectivity by enabling the TCP/IP protocol through the SQL Server Configuration Manager. 
+    This ensures SQL Server is accessible over the local network.
 
 User Authentication Setup:
   SQL Server Authentication was implemented to provide access credentials for Power BI users. Dedicated SQL Server logins and profiles were created with appropriate roles and permissions (e.g., db_datareader for read-only access).
   As this setup was conducted in a WORKGROUP environment (without Active Directory integration), all authentication was configured using SQL Server’s internal security model.
 
 Firewall Configuration:
-  The server’s Windows Defender Firewall was updated to allow SQL Server network traffic:
-  TCP port 1433 was opened to enable SQL Server connections.
-  UDP port 1434 was opened to facilitate SQL Server Browser service, enabling named instance discovery.
-  These changes were applied to the relevant profiles (Domain, Private, Public) to support both direct connections and discovery of named instances.
+  The server’s Windows Defender Firewall was updated to allow SQL Server network traffic
 
 Connectivity Verification:
-  Connection testing was performed using Windows PowerShell’s Test-NetConnection command, validating that the required ports (1433 for SQL Server and 1434 for SQL Server Browser) were open and accessible on the network.
+  Connection testing was performed using Windows PowerShell’s Test-NetConnection command, validating that the required ports were open and accessible on the network.
   Additionally, the server’s hostname and IP resolution were confirmed to ensure reliable access.
 
 Power BI Integration:
