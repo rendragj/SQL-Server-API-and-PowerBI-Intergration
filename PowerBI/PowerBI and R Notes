@@ -1,0 +1,60 @@
+LAK Exchange Rate Forecasting & Analysis Dashboard
+
+-Project Overview:
+This dashboard delivers a comprehensive time series and predictive analysis of the LAK (Lao Kip) exchange rate using data from a historical API.
+The dashboard includes linear regression, volatility tracking, regime identification, time series decomposition, predictive modeling (Random Forest), 
+and a 30-day forecast using the Prophet model. It is designed to support decision-making in financial strategy, FX exposure planning, and risk management.
+
+-Key Objectives:
+Monitor the LAK exchange rate and identify patterns over time
+Detect periods of volatility and regime shifts
+Model and predict future exchange rate behavior
+Forecast exchange rate movements with confidence intervals
+
+Key Dashboard Components:
+
+
+-Linear Regression with Outlier Detection:
+Highlights the general direction of LAK over time using linear regression.
+Influential points identified using Cook's Distance.
+Interpretation: A downward trend was observed with several impactful outliers in late January and March.
+
+-Rolling 7-Day Volatility Plot:
+Shows fluctuations in volatility using a 7-day rolling standard deviation.
+Interpretation: Significant spikes were observed in February, suggesting sudden market shocks.
+
+-Time Series Decomposition:
+Breakdown of the exchange rate into: Trend, Seasonal, and Remainder (noise).
+Interpretation:
+Trend: A long-term decrease followed by recovery in March.
+Seasonality: A strong, repeating weekly pattern, especially a drop on Mondays.
+Remainder: Captures random fluctuations and outliers.
+
+-Predictive Modeling (Random Forest):
+Predicts the exchange rate using historical lag features and rolling statistics.
+Interpretation: The model accurately captures the structure of the data and closely follows the actual values, even during high volatility.
+
+-Prophet Forecast (30 Days):
+Forecast generated using the Prophet model.
+Components include future trend and weekly seasonality.
+Interpretation:
+Trend: Forecast shows continued strengthening of the LAK through April.
+Seasonality: Consistent pattern with Monday dips and midweek peaks.
+
+
+-Insights & Business Value:
+Exchange rate fluctuations are not random; structured volatility and seasonality can be leveraged.
+Outlier detection and volatility plots provide actionable insights for risk management.
+Predictive modeling and Prophet forecasts offer reliable tools for planning remittance cycles, FX hedging, and monetary policy analysis.
+
+-Recommendations:
+Operational Planning: Avoid FX transactions on Mondays where possible due to consistent dips.
+Monitoring Regimes: Implement alerts during volatility spikes (e.g., >500 std dev) to evaluate macroeconomic causes.
+Model Extensions: Integrate macroeconomic indicators (interest rate changes, inflation, policy events) as external regressors for future Prophet models.
+Currency Comparison: Expand model to include DKK, EUR, and other regional currencies to understand cross-currency volatility regimes.
+
+-Technical Stack:
+Power BI Desktop
+R Scripts: ggplot2, prophet, dplyr, randomForest, zoo, changepoint
+Data Sources: API ingestion, structured CSV history
+
