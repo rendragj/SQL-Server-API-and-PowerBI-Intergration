@@ -1,2 +1,52 @@
-The API History EUR&DKK.pbix presentation write up: 
+EUR/DKK Exchange Rate Dashboard Summary
 
+Project Overview:
+This dashboard provides a high-level analytical view of the EUR/DKK exchange rates using API-driven historical data. 
+The focus is on basic statistical metrics, time-based aggregation, and dynamic filtering.
+It supports users in understanding currency behavior and making informed financial decisions through intuitive visuals.
+
+Key Objectives:
+
+Track and monitor the EUR/DKK exchange rate over a specific time range
+Identify average, high, and low points in the currency exchange
+Quantify exchange rate stability
+Measure percentage change over time
+
+Key Dashboard Components:
+
+Line Chart (Exchange Rate Over Time)
+Displays the EUR/DKK exchange rate across the selected time window.
+Interactive timeline with granular daily data.
+Interpretation: Exchange rate remained relatively stable, with a minor dip in late 2024.
+
+Timeline Slider
+Users can dynamically filter the date range of the analysis.
+Supports zooming into specific months or multi-quarter views for seasonal inspection.
+
+KPI Cards
+Lowest Exchange Rate: Highlights the lowest recorded EUR/DKK rate.
+Highest Exchange Rate: Identifies the highest observed value.
+% Change Last 30 Days: Calculates directional movement and short-term trend.
+
+Stability Index (Gauge Visual)
+A custom metric that inversely reflects the standard deviation of the rate.
+Interpretation: High stability score (94.6) confirms EUR/DKK is a low-volatility pair.
+
+Monthly Average Bar Chart
+Visual breakdown of average EUR/DKK exchange rate per month.
+Supports trend comparison across fiscal quarters.
+Interpretation: Monthly averages hold consistent at ~7.46, reaffirming low variance.
+
+Insights & Business Value:
+EUR/DKK exchange rate is extremely stable, with a low standard deviation.
+No significant monthly deviation observed between October and March.
+The percent change card (-0.02%) confirms negligible drift over the past 30 days.
+
+Recommendations:
+Hedging Strategies: Given the minimal volatility, forward contract timing can be flexible.
+Decision Windows: Use the timeline slider to detect any subtle regime changes or outliers.
+
+Technical Stack:
+Power BI Desktop
+DAX for KPI cards and stability index
+Custom visuals for gauge, cards, and timeline slicers
